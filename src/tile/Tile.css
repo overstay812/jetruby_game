@@ -1,0 +1,55 @@
+.tile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background: lightskyblue;
+    margin: 5px;
+    border-radius: 10%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.tile:hover {
+    opacity: 0.7;
+}
+
+.active:hover {
+    opacity: 1;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.pink {
+    background-color: pink;
+}

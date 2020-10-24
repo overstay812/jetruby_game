@@ -1,0 +1,6 @@
+{
+    "prettier.insertPragma": true,
+    "prettier.requireConfig": true,
+    "prettier.requirePragma": true,
+    "html.format.unformatted": ""
+}
