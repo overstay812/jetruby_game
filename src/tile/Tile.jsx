@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getFinishedFirstTile, getFinishedSecondTile, getFirstTileColor, getFirstTileIndex, getIsActiveFirstTile, getIsActiveSecondTile, getSecondTileColor, getSecondTileIndex, startRoundCounter } from '../Redux/actions'
 import './Tile.css'
+import PropTypes from 'prop-types'
 
 const Tile = ({
     index,
@@ -71,6 +72,7 @@ const Tile = ({
         </div>
     )
 }
+
 const mapStateToProps = state => {
     return {
         firstTileColor: state.mainReducer.firstTileColor,
@@ -89,4 +91,13 @@ const mapDispatchToProps = {
     getFinishedSecondTile,
     startRoundCounter
 }
+
+Tile.propTypes = {
+    isActive: PropTypes.bool,
+    finished: PropTypes.bool,
+    color: PropTypes.string,
+    firstTileColor: PropTypes.string,
+    secondTileColor: PropTypes.string,
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(Tile)

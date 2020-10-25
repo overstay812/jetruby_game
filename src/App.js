@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Tile from './tile/Tile';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 
 function App({ tileArr, roundCounter }) {
     const [title, setTile] = useState(true)
 
     let arrayIsActive = []
-    tileArr.map(item => {
-        arrayIsActive.push(item.isActive)
-    })
-
+    tileArr.map(item => arrayIsActive.push(item.isActive))
     useEffect(() => {
         let result = arrayIsActive.reduce((acc, next) => acc + next)
         if (result === 16) {
@@ -36,5 +33,9 @@ const mapStateToProps = state => {
     }
 }
 
+App.propTypes = {
+    tileArr: PropTypes.arrayOf(PropTypes.object),
+    roundCounter: PropTypes.number
+}
 
 export default connect(mapStateToProps)(App);
